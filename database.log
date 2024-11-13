@@ -1,0 +1,14 @@
+1731517377650|6|statement|select * from information_schema.sequences
+1731517377684|12|statement|create table projet (projet_id bigserial not null, description varchar(255), name varchar(255), primary key (projet_id))
+1731517377687|2|statement|create table projet_task_count (projet_id bigint not null, name varchar(255), task_count bigint, primary key (projet_id))
+1731517377694|4|statement|create table task (task_id bigserial not null, status varchar(255), title varchar(255), projet_id bigint, users_id bigint, primary key (task_id))
+1731517377699|5|statement|create table users (users_id bigserial not null, email varchar(255), name varchar(255), primary key (users_id))
+1731517377702|2|statement|create table users_projet (users_id bigint not null, projet_id bigint not null, primary key (users_id, projet_id))
+1731517377706|2|statement|create index idx_projet_name on projet (name)
+1731517377708|1|statement|create index idx_task_title on task (title)
+1731517377710|2|statement|alter table if exists task drop constraint if exists UK_sos5yupwk4moyd7ct3xlocogv
+1731517377714|3|statement|alter table if exists task add constraint UK_sos5yupwk4moyd7ct3xlocogv unique (users_id)
+1731517377719|3|statement|alter table if exists task add constraint FK2gw9fbq3iutchflo46m13r4om foreign key (projet_id) references projet
+1731517377721|1|statement|alter table if exists task add constraint FK266dcc5lf06iwg8qs4nqxxsr foreign key (users_id) references users
+1731517377722|1|statement|alter table if exists users_projet add constraint FKk6p89us6g5mvq3lr806lp3rxj foreign key (projet_id) references projet
+1731517377723|0|statement|alter table if exists users_projet add constraint FKkkr08rn8kn7mkqpu6yjbylmu3 foreign key (users_id) references users

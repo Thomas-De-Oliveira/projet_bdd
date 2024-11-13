@@ -1,16 +1,16 @@
 package com.exo1.exo1.mapper;
 
-import com.exo1.exo1.dto.UserDTO;
-import com.exo1.exo1.entities.User;
+
+import com.exo1.exo1.dto.UserDto;
+import com.exo1.exo1.entity.User;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+import java.util.List;
+
+@Mapper(componentModel = "spring", uses = {ProjetMapper.class})
 public interface UserMapper {
-
-    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
-
-    UserDTO toUserDTO(User user);
-
-    User toUserEntity(UserDTO dto);
+    UserDto toDto(User user);
+    User toEntity(UserDto userDto);
+    List<UserDto> toDtos(List<User> users);
+    List<User> toEntities(List<UserDto> userDtos);
 }

@@ -1,4 +1,4 @@
-# exercice Spring Boot
+# spring-startup
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/supdevinci3324819/exercice-spring-boot.git
+git remote add origin https://gitlab.com/supdevinci3324819/spring-startup.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/supdevinci3324819/exercice-spring-boot/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/supdevinci3324819/spring-startup/-/settings/integrations)
 
 ## Collaborate with your team
 
